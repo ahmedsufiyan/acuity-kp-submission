@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { actionCreators } from '../store/DataProcessor';
 import { Button, Table } from 'react-bootstrap';
 import './FetchData.css';
+import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 
 class ShowData extends Component {
     constructor(props){
@@ -54,7 +55,7 @@ class ShowData extends Component {
         const { excelData, isEdit, currentEditRow } = this.state
         return (
             <div> 
-                <Table className="extractedTable" responsive>
+                <Table id="table-to-xls" className="extractedTable" responsive>
                 <thead>
                     <tr>
                     {
@@ -91,7 +92,13 @@ class ShowData extends Component {
                     }
                 </tbody>
                 </Table>
-                <Button bsStyle="primary">Export Data to Excel</Button>
+                <ReactHTMLTableToExcel
+                    id="test-table-xls-button"
+                    className="download-button"
+                    table="table-to-xls"
+                    filename={this.props.fileName}
+                    sheet="Sheet 1"
+                    buttonText="Export Data to Excel(XLS)"/>
             </div>
         )
     }

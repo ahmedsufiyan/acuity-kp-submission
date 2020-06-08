@@ -25,7 +25,7 @@ class FileData extends Component {
                 </p> 
                 <Button onClick={ this.extractDataFromFile } bsStyle="info">Process Data</Button> &nbsp;
                 <Button onClick={() => { removeFile() }}>Remove File</Button>
-                { extractedInfo && <ShowData /> }
+                { extractedInfo && <ShowData fileName={selectedFile.name} /> }
             </div> 
         )
     }
