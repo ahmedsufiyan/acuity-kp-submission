@@ -1,0 +1,10 @@
+.tableButton{
+    padding: 8px;
+    border-radius: 5px;
+    width: 125px;
+    border-color: currentcolor;
+}
+
+.table > tbody > tr > td{
+    vertical-align: middle;
+}
